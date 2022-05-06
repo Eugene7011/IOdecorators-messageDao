@@ -94,6 +94,7 @@ public class BufferedInputStream extends InputStream {
     public void close() throws IOException {
         target.close();
         target = null;
+        bufferNextByte = 0;
     }
 
     public InputStream getTarget() {

@@ -65,6 +65,7 @@ public class BufferedOutputStream extends OutputStream {
         flush();
         target.close();
         target = null;
+        position = 0;
     }
 
     @Override

@@ -180,9 +180,10 @@ public class BufferedInputStreamTest {
     @DisplayName("test BufferedInputStream Read Bytes Correct Using Offset And Length")
     @Test
     public void testBufferedInputStreamReadBytesCorrectUsingOffsetAnd() throws IOException {
-        byte[] b = new byte[30];
-        java.io.BufferedInputStream bufferedInputStream = new java.io.BufferedInputStream(new ByteArrayInputStream("".getBytes()));
+        byte[] b = new byte[3];
+        java.io.BufferedInputStream bufferedInputStream = new java.io.BufferedInputStream(new ByteArrayInputStream("ABC".getBytes()));
+        bufferedInputStream.read(b, 0, 3);
 
-        assertEquals(-1, bufferedInputStream.read(b, 0, 30));
+        assertEquals("ABC",new String (b));
     }
 }
